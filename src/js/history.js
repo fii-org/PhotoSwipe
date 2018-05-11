@@ -187,7 +187,8 @@ _registerModule('History', {
 				if(!_closedFromURL) {
 
 					if(_urlChangedOnce) {
-						history.back();
+						// history.back() /* FII: Interferes with Turbolinks' own back history implementation
+						history.pushState("", document.title, _windowLoc.pathname + _windowLoc.search);
 					} else {
 
 						if(_initialHash) {

@@ -42,5 +42,8 @@
     "zoom"
   ],
   "author": "Dmitry Semenov (http://dimsemenov.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "npm": "^6.0.1"
+  }
 }

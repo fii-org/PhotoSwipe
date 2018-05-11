@@ -1,6 +1,6 @@
-/*! PhotoSwipe - v4.1.2 - 2017-04-05
+/*! PhotoSwipe - v4.1.2 - 2018-05-11
 * http://photoswipe.com
-* Copyright (c) 2017 Dmitry Semenov; */
+* Copyright (c) 2018 Dmitry Semenov; */
 (function (root, factory) { 
 	if (typeof define === 'function' && define.amd) {
 		define(factory);
@@ -3632,7 +3632,8 @@ _registerModule('History', {
 				if(!_closedFromURL) {
 
 					if(_urlChangedOnce) {
-						history.back();
+						// history.back() /* FII: Interferes with Turbolinks' own back history implementation
+						history.pushState("", document.title, _windowLoc.pathname + _windowLoc.search);
 					} else {
 
 						if(_initialHash) {
